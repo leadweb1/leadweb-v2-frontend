@@ -24,8 +24,21 @@
       });
   }
 
-  function MainCtrl($log) {
+  function MainCtrl($log, $scope, $http) {
     $log.debug('MainCtrl laoded!');
+    $http({
+        method: 'JSONP',
+        url: appConfig.apiUrl + '/api/leadweb.jsonp?callback=JSON_CALLBACK'
+    }).then(function successCallback(response) {
+          // this callback will be called asynchronously
+          // when the response is available
+          $scope.data = response.data;
+          $scope.apiUrl = appConfig.apiUrl;
+        }, function errorCallback(response) {
+          // called asynchronously if an error occurs
+          // or server returns response with an error status.
+          alert('Error loading data');
+    });
   }
 
   function run($log) {
@@ -35,7 +48,7 @@
   angular.module('app', [
       'ui.router',
       'home',
-      'getting-started',
+      'dev',
       'common.header',
       'common.footer',
       'common.services.data',

@@ -7,29 +7,29 @@
    */
   function config($stateProvider) {
     $stateProvider
-      .state('root.getting-started', {
-        url: '/getting-started',
+      .state('root.dev', {
+        url: '/dev',
         views: {
           '@': {
-            templateUrl: 'src/app/getting-started/getting-started.tpl.html',
-            controller: 'GettingStartedCtrl as docs'
+            templateUrl: 'src/app/dev/dev.tpl.html',
+            controller: 'DevCtrl as docs'
           }
         }
       });
   }
 
   /**
-   * @name  gettingStartedCtrl
+   * @name  devCtrl
    * @description Controller
    */
-  function GettingStartedCtrl($log) {
+  function DevCtrl($log) {
     var docs = this;
     docs.someMethos = function () {
       $log.debug('I\'m a method');
     };
   }
 
-  angular.module('getting-started', [])
+  angular.module('dev', [])
     .config(config)
-    .controller('GettingStartedCtrl', GettingStartedCtrl);
+    .controller('DevCtrl', DevCtrl);
 })();
