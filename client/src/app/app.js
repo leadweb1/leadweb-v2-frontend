@@ -10,6 +10,7 @@
     $urlRouterProvider.otherwise('/');
     $logProvider.debugEnabled(true);
     $httpProvider.interceptors.push('httpInterceptor');
+    $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
     $locationProvider.html5Mode(true).hashPrefix('!');
     $stateProvider
       .state('root', {

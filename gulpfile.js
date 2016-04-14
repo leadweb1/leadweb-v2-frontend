@@ -50,6 +50,15 @@ gulp.task('images', function() {
     }));
 });
 
+// copy .htaccess
+gulp.task('htaccess', function() {
+  return gulp.src(config.htaccess)
+    .pipe(gulp.dest(config.dist))
+    .pipe($.size({
+      title: 'htaccess'
+    }));
+});
+
 //generate angular templates using html2js
 gulp.task('templates', function() {
   return gulp.src(config.tpl)
@@ -79,7 +88,7 @@ gulp.task('sass', function() {
 
 //build files for creating a dist release
 gulp.task('build:dist', ['clean'], function(cb) {
-  runSequence(['jshint', 'build', 'copy', 'copy:assets', 'images', 'test:unit'], 'html', cb);
+  runSequence(['jshint', 'build', 'copy', 'copy:assets', 'images', 'test:unit', 'htaccess'], 'html', cb);
 });
 
 //build files for development
@@ -88,7 +97,7 @@ gulp.task('build', ['clean'], function(cb) {
 });
 
 //generate a minified css files, 2 js file, change theirs name to be unique, and generate sourcemaps
-gulp.task('html', function() {
+gulp.task('html', ['htaccess'], function() {
   var assets = $.useref.assets({
     searchPath: '{build,client}'
   });

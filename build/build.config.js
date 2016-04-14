@@ -17,6 +17,7 @@ module.exports = {
     'client/test/e2e/**/*.js'
   ],
   index: 'client/index.html',
+  htaccess: 'client/.htaccess',
   assets: 'client/assets/**',
   images: 'client/assets/images/**/*',
   banner: ['/**',
