@@ -49,6 +49,7 @@
       'ui.router',
       'home',
       'dev',
+      'project',
       'common.header',
       'common.footer',
       'common.services.data',
