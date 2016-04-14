@@ -15,6 +15,7 @@ var _ = require('lodash');
 /* jshint camelcase:false*/
 var webdriverStandalone = require('gulp-protractor').webdriver_standalone;
 var webdriverUpdate = require('gulp-protractor').webdriver_update;
+var modRewrite = require('connect-modrewrite');
 
 //update webdriver if necessary, this task will be used by e2e task
 gulp.task('webdriver:update', webdriverUpdate);
@@ -193,7 +194,14 @@ gulp.task('serve', ['build'], function() {
     },
     notify: false,
     logPrefix: pkg.name,
-    server: ['build', 'client']
+    server: {
+            baseDir: ['build', 'client'],  
+            middleware: [
+                modRewrite([
+                    '!\\.\\w+$ /index.html [L]'
+                ])
+            ]
+        }
   });
 
   gulp.watch(config.html, reload);

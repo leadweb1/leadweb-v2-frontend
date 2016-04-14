@@ -1,3 +1,4 @@
+<a facebook class="facebookShare" data-url="{{ currentUrl }}" data-shares="shares">{{ shares }}</a>
 <div class="pure-g">
   <div class="pure-u-1">
     <h4>Projects</h4>
@@ -7,7 +8,7 @@
             <div class="description">{{ project.description }}</div>
             <div ng-if="project.images.length > 0">
                 <div ng-repeat="(projectImageId, projectImage) in project.images">
-                    <img ng-if="projectImage.image !== null" ng-src="{{ apiUrl + '/media-api/media/' + projectImage.image.id + '/binaries/default_small' }}" 
+                    <img ng-if="projectImage.image !== null" ng-src="{{ appConfig.apiUrl + '/media-api/media/' + projectImage.image.id + '/binaries/default_small' }}" 
                          width="{{ projectImage.width }}" 
                          height="{{ projectImage.height }}"
                          atl="{{ projectImage.name }}" />

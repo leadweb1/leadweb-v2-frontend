@@ -2,10 +2,11 @@
     <div class="pure-u-1">
         {{ project = data.projects[data.projects_by_slug[projectSlug]];"" }}
         <h4>{{ project.title}}</h4>
+        <a facebook class="facebookShare" data-url="{{ currentUrl }}" data-shares="shares">{{ shares }}</a>
         <p>{{ project.description}}</p>
         <div ng-if="project.images.length > 0">
             <div ng-repeat="(projectImageId, projectImage) in project.images">
-                <img ng-if="projectImage.image !== null" ng-src="{{ apiUrl + '/media-api/media/' + projectImage.image.id + '/binaries/default_small' }}"
+                <img ng-if="projectImage.image !== null" ng-src="{{ appConfig.apiUrl + '/media-api/media/' + projectImage.image.id + '/binaries/default_small' }}"
                      width="{{ projectImage.width}}"
                      height="{{ projectImage.height}}"
                      atl="{{ projectImage.name}}" />
