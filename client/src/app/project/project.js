@@ -53,7 +53,7 @@
     $scope.currentUrl = location.origin + $location.url();
     $scope.projectSlug = $stateParams.projectSlug;
     if($scope.data) {
-        updateProjectMetadata($scope, $log, $rootScope);
+        $rootScope.updateProjectMetadata($scope, $log, $rootScope);
     }
   }
 

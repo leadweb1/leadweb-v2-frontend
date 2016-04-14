@@ -1,18 +1,6 @@
-function updateProjectMetadata($scope, $log, $rootScope) {
-  $scope.project = $scope.data.projects[$scope.data.projects_by_slug[$scope.projectSlug]];
-  $log.debug($scope.project);
-  $rootScope.metatags =  {
-      title: $scope.project.title,
-      description: $scope.project.description,
-      fb_title: $scope.project.title,
-      fb_site_name: $scope.project.title,
-      fb_url: $scope.currentUrl,
-      fb_description: $scope.project.description
-  };
-}
+'use strict';
 
 (function() {
-  'use strict';
 
   angular.element(document).ready(function() {
     angular.bootstrap(document, ['app']);
@@ -40,6 +28,20 @@ function updateProjectMetadata($scope, $log, $rootScope) {
   
   function MainCtrl($log, $scope, $rootScope, $http, $state, $stateParams, $location) {
     $log.debug('MainCtrl laoded!');
+    
+    $rootScope.updateProjectMetadata = function($scope, $log, $rootScope) {
+      $scope.project = $scope.data.projects[$scope.data.projects_by_slug[$scope.projectSlug]];
+      $log.debug($scope.project);
+      $rootScope.metatags =  {
+          title: $scope.project.title,
+          description: $scope.project.description,
+          fb_title: $scope.project.title,
+          fb_site_name: $scope.project.title,
+          fb_url: $scope.currentUrl,
+          fb_description: $scope.project.description
+      };
+    };
+
     $http({
         method: 'JSONP',
         url: appConfig.apiUrl + '/api/leadweb.jsonp?callback=JSON_CALLBACK'
@@ -49,16 +51,17 @@ function updateProjectMetadata($scope, $log, $rootScope) {
         $scope.data = response.data;
         $scope.appConfig = appConfig;
         $scope.currentUrl = location.origin + $location.url();
-        $log.debug('state')
+        $log.debug('state');
         $log.debug($state);
-        if($state.current.name == 'root.project') {
+        if($state.current.name === 'root.project') {
             $scope.projectSlug = $stateParams.projectSlug;
-            updateProjectMetadata($scope, $log, $rootScope);
+            $rootScope.updateProjectMetadata($scope, $log, $rootScope);
         }
     }, function errorCallback(response) {
         // called asynchronously if an error occurs
         // or server returns response with an error status.
-        alert('Error loading data');
+        $log.debug(response);
+        //alert('Error loading data');
     });
   }
 

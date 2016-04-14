@@ -1,11 +1,12 @@
 {
   "globals": {
-    "angular": false
+    "angular": false,
+    "appConfig": false
   },
   "node": true,
   "browser": true,
   "bitwise": true,
-  "camelcase": true,
+  "camelcase": false,
   "curly": true,
   "immed": true,
   "latedef": true,
