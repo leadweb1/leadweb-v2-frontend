@@ -2,7 +2,7 @@
     <div class="pure-u-1">
         {{ project = data.projects[data.projects_by_slug[projectSlug]];"" }}
         <h4>{{ project.title}}</h4>
-        <a facebook class="facebookShare" data-url="{{ currentUrl }}" data-shares="shares">{{ shares }}</a>
+        <a facebook class="facebookShare" data-url="{{ metatags.fb_url }}" data-shares="shares">{{ shares }}</a>
         <p>{{ project.description}}</p>
         <div ng-if="project.images.length > 0">
             <div ng-repeat="(projectImageId, projectImage) in project.images">

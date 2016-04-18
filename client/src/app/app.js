@@ -38,7 +38,7 @@
           description: $scope.project.description,
           fb_title: $scope.project.title,
           fb_site_name: $scope.project.title,
-          fb_url: $scope.currentUrl,
+          fb_url: appConfig.apiUrl + '/share/project/' + $scope.project.slug,
           fb_description: $scope.project.description
       };
     };
