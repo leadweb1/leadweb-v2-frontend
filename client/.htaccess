@@ -3,8 +3,8 @@
     RewriteBase /
 
 
-    RewriteEngine on
-    RewriteCond %{HTTP:X-Requested-With} !XMLHttpRequest$
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule . index.html [L]
+    #RewriteEngine on
+    #RewriteCond %{HTTP:X-Requested-With} !XMLHttpRequest$
+    #RewriteCond %{REQUEST_FILENAME} !-f
+    #RewriteRule . index.html [L]
 </IfModule>
