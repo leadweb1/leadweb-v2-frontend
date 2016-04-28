@@ -6,13 +6,12 @@
         <div class="project">
             <div class="title"><a ui-sref="root.project({projectSlug: project.slug})">{{ project.title}}</a></div>
             <div class="description">{{ project.description }}</div>
-            <div ng-if="project.images.length > 0">
-                <div ng-repeat="(projectImageId, projectImage) in project.images">
-                    <img ng-if="projectImage.image !== null" ng-src="{{ appConfig.apiUrl + '/media-api/media/' + projectImage.image.id + '/binaries/default_small' }}" 
-                         width="{{ projectImage.width }}" 
-                         height="{{ projectImage.height }}"
-                         atl="{{ projectImage.name }}" />
-                </div>
+            <div ng-if="project.images.length > 0" ng-init="projectImage = project.images[0]">
+                {{image}}
+                <img ng-if="projectImage.image !== null" ng-src="{{ appConfig.apiUrl + '/media-api/media/' + projectImage.image.id + '/binaries/default_small' }}" 
+                     width="{{ projectImage.width }}" 
+                     height="{{ projectImage.height }}"
+                     atl="{{ projectImage.name }}" />
             </div>
         </div>
     </div>
