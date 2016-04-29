@@ -4,7 +4,7 @@
     <h4>Projects</h4>
     <div ng-repeat="(projectId, project) in data.projects">
         <div class="project">
-            <div class="title"><a ui-sref="root.project({projectSlug: project.slug})">{{ project.title}}</a></div>
+            <div class="title"><a ui-sref="root.project({projectSlug: project.slug, lang: lang})">{{ project.title}}</a></div>
             <div class="description">{{ project.description }}</div>
             <div ng-if="project.images.length > 0" ng-init="projectImage = project.images[0]">
                 {{image}}

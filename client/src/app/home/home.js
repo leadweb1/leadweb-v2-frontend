@@ -8,7 +8,7 @@
   function config($stateProvider, MetaTagsProvider) {
     $stateProvider
       .state('root.home', {
-        url: '/',
+        url: appConfig.stateUrlLangPrefix,
         views: {
           '@': {
             templateUrl: 'src/app/home/home.tpl.html',
@@ -23,7 +23,7 @@
       });
       
       MetaTagsProvider
-        .when('/', {
+        .when(appConfig.stateUrlLangPrefix, {
           title: 'Leadweb - Web &amp; Mobile App Development',
           description: 'Digital agency based in Montreal specializing in custom mobile and web solutions',
           fb_title: 'Leadweb - Web &amp; Mobile App Development',
@@ -39,10 +39,11 @@
    * @name  HomeCtrl
    * @description Controller
    */
-  function HomeCtrl($scope, $log, $location, data) {
+  function HomeCtrl($rootScope, $scope, $log, $location, $stateParams, data) {
       $log.debug('HomeCtrl laoded!');
     var home = this;
     home.data = data.data;
+    $rootScope.checkLocale($stateParams.lang);
     
     $scope.currentUrl = location.origin + $location.url();
   }

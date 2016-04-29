@@ -8,7 +8,7 @@
   function config($stateProvider, MetaTagsProvider) {
     $stateProvider
       .state('root.project', {
-        url: '/project/:projectSlug',
+        url: appConfig.stateUrlLangPrefix+'/project/:projectSlug',
         views: {
           '@': {
             templateUrl: 'src/app/project/project.tpl.html',
@@ -29,7 +29,7 @@
       });
       
       MetaTagsProvider
-        .when('/project/:projectSlug', {
+        .when(appConfig.stateUrlLangPrefix+'/project/:projectSlug', {
           title: 'Leadweb - Project',
           description: 'My project',
           fb_title: 'Leadweb - Project',
@@ -49,6 +49,7 @@
       $log.debug('ProjectCtrl laoded!');
     var project = this;
     project.data = data.data;
+    $rootScope.checkLocale($stateParams.lang);
 
     $scope.currentUrl = location.origin + $location.url();
     $scope.projectSlug = $stateParams.projectSlug;

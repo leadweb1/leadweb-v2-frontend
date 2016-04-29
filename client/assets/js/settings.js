@@ -4,6 +4,11 @@
  * and open the template in the editor.
  */
 
+var locales = [
+    'en',
+    'fr',
+];
+
 var appConfig = {
   clientId: 'NOT-SET',
   timeout :  30,
@@ -14,4 +19,7 @@ var appConfig = {
   //driveUrl: 'https://spreadsheets.google.com/feeds/list/1I3ymWKzSZHpV4wicdLLpbmBjLaOhUp7aXncA3W9j_Ok/'
   apiUrl  : 'http://localhost:8000',
   facebookAppId: '1601298056859713',
+  stateUrlLangPrefix: '/{lang:(?:'+locales.join('|')+')}',
+  defaultLocale: locales[0],
+  locales: locales,
 };
