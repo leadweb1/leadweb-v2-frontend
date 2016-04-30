@@ -54,7 +54,7 @@
           og_url: appConfig.apiUrl + '/' + $rootScope.lang + '/share/page/' + $scope.page.module.replace('root.',''),
           og_description: $scope.page.metadata.description
         });
-    }
+    };
 
     $rootScope.updateProjectMetadata = function() {
       $scope.project = $scope.data.projects[$scope.data.projects_by_slug[$scope.projectSlug]];
@@ -91,7 +91,7 @@
             $scope.page = $scope.data.pages[$scope.data.pages_by_module[$state.current.name]];
             $rootScope.updatePageMetadata();
         }
-    }
+    };
     
     $rootScope.httpSuccess = function successCallback(response) {
         // this callback will be called asynchronously
@@ -105,6 +105,7 @@
     $rootScope.httpError = function errorCallback(response) {
         // called asynchronously if an error occurs
         // or server returns response with an error status.
+        $log.debug(response);
     };
     
     $rootScope.loadData = function(lang) {
