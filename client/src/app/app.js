@@ -51,7 +51,7 @@
           description: $scope.page.metadata.description,
           og_title: $scope.page.metadata.title,
           og_site_name: $scope.page.metadata.title,
-          og_url: appConfig.apiUrl + '/' + $rootScope.lang + '/share/page/' + $scope.page.module.replace('root.',''),
+          og_url: appConfig.apiUrl + '/' + $rootScope.lang + '/page/' + $scope.page.module.replace('root.',''),
           og_description: $scope.page.metadata.description
         });
     };
@@ -63,7 +63,7 @@
           description: $scope.project.description,
           og_title: $scope.project.title,
           og_site_name: $scope.project.title,
-          og_url: appConfig.apiUrl + '/' + $rootScope.lang + '/share/project/' + $scope.project.slug,
+          og_url: appConfig.apiUrl + '/' + $rootScope.lang + '/project/' + $scope.project.slug,
           og_description: $scope.project.description
       });
     };
