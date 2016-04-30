@@ -17,7 +17,7 @@ var appConfig = {
   postUrl : 'http://astral-analytics.picard.lead-web.com/post-session',
   postKey : '_ujWA-rIA8IQfUD1',
   //driveUrl: 'https://spreadsheets.google.com/feeds/list/1I3ymWKzSZHpV4wicdLLpbmBjLaOhUp7aXncA3W9j_Ok/'
-  apiUrl  : 'http://localhost:8000',
+  apiUrl  : 'http://leadweb-v2.leadweb1.demo.lead-web.com',
   facebookAppId: '1601298056859713',
   stateUrlLangPrefix: '/{lang:(?:'+locales.join('|')+')}',
   defaultLocale: locales[0],
