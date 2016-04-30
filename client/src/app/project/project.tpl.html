@@ -1,6 +1,5 @@
-<a facebook class="facebookShare" data-url="{{ metatags.fb_url }}" data-shares="shares">{{ shares }}</a>
-<div class="pure-g">
-    <div class="pure-u-1">
+<div class="pure-g island3">
+  <div class="content pure-u-1">
         {{ project = data.projects[data.projects_by_slug[projectSlug]];"" }}
         <h4>{{ project.title}}</h4>
         <p>{{ project.description}}</p>
@@ -12,5 +11,6 @@
                      atl="{{ projectImage.name}}" />
             </div>
         </div>
+        <a facebook class="facebookShare" data-url="{{ metatags.fb_url }}" data-shares="shares">{{ shares }}</a>
     </div>
 </div>

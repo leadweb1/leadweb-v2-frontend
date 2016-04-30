@@ -78,6 +78,9 @@
                 $rootScope.loadData($rootScope.lang);
             }
         }
+        else {
+            $rootScope.updateData();
+        }
     };
     
     $rootScope.updateData = function() {
