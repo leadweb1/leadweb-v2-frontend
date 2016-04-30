@@ -1,9 +1,14 @@
 <div class="pure-menu pure-menu-open pure-menu-horizontal">
-  <a class="pure-menu-heading" href="">angular-kickstart <span app-version></span></a>
   <ul>
-    <li ui-sref-active="pure-menu-selected"><a href ui-sref="root.home({lang: lang})">{{ 'home' | uppercase }}</a>
+    <li class="left" ui-sref-active="pure-menu-selected"><a href ui-sref="root.home({lang: lang})">{{ data.pages[data.pages_by_module['root.home']].name | uppercase }}</a>
     </li>
-    <li ui-sref-active="pure-menu-selected"><a href ui-sref="root.dev({lang: lang})">{{ 'dev' | uppercase }}</a>
+    <li ui-sref-active="pure-menu-selected"><a href ui-sref="root.dev({lang: lang})">{{ data.pages[data.pages_by_module['root.dev']].name | uppercase }}</a>
+    </li>
+    <li ui-sref-active="pure-menu-selected"><a href ui-sref="root.projects({lang: lang})">{{ data.pages[data.pages_by_module['root.projects']].name | uppercase }}</a>
+    </li>
+    <li ui-sref-active="pure-menu-selected"><a href ui-sref="root.jobs({lang: lang})">{{ data.pages[data.pages_by_module['root.jobs']].name | uppercase }}</a>
+    </li>
+    <li ui-sref-active="pure-menu-selected"><a href ui-sref="root.contact({lang: lang})">{{ data.pages[data.pages_by_module['root.contact']].name | uppercase }}</a>
     </li>
     <li ng-repeat="locale in appConfig.locales" ng-show="locale != lang"><a href ui-sref="root.home({lang: locale})">{{ locale | uppercase }}</a>
     </li>

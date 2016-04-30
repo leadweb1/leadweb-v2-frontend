@@ -1,6 +1,6 @@
 <div class="pure-g island3">
   <div class="content pure-u-1">
-      <p>Our expertise</p>
+    <h4>{{ page.name }}</h4>
       <div ng-repeat="tagId in data.tags_by_type['skill']" ng-init="skillTag = data.tags[tagId]">
         <h3>{{skillTag.name}}</h3>
         <ul>

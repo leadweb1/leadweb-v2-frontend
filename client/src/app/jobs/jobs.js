@@ -7,26 +7,26 @@
    */
   function config($stateProvider) {
     $stateProvider
-      .state('root.home', {
-        url: appConfig.stateUrlLangPrefix,
+      .state('root.jobs', {
+        url: appConfig.stateUrlLangPrefix+'/jobs',
         views: {
           '@': {
-            templateUrl: 'src/app/home/home.tpl.html',
-            controller: 'HomeCtrl as docs'
+            templateUrl: 'src/app/jobs/jobs.tpl.html',
+            controller: 'JobsCtrl as docs'
           }
         }
       });
   }
 
   /**
-   * @name  homeCtrl
+   * @name  jobsCtrl
    * @description Controller
    */
-  function HomeCtrl($rootScope, $stateParams) {
+  function JobsCtrl($rootScope, $stateParams) {
     $rootScope.checkLocale($stateParams.lang);
   }
 
-  angular.module('root.home', [])
+  angular.module('root.jobs', [])
     .config(config)
-    .controller('HomeCtrl', HomeCtrl);
+    .controller('JobsCtrl', JobsCtrl);
 })();

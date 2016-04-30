@@ -15,12 +15,12 @@
   <meta charset="utf-8" />
 
   <meta property="fb:app_id"          content="{{ appConfig.facebookAppId }}" > 
-  <meta property="og:url"             content="{{ metatags.fb_url }}"  > 
-  <meta property="og:title"           content="{{ metatags.fb_title }}" > 
-  <meta property="og:image"           content="{{ metatags.fb_image }}"  > 
-  <meta property="og:description"     content="{{ metatags.fb_description }}"  >
-  <meta property="og:site_name"       content="{{ metatags.fb_site_name }}" >
-  <meta property="og:type"            content="{{ metatags.fb_type }}" >
+  <meta property="og:url"             content="{{ metatags.og_url }}"  > 
+  <meta property="og:title"           content="{{ metatags.og_title }}" > 
+  <meta property="og:image"           content="{{ metatags.og_image }}"  > 
+  <meta property="og:description"     content="{{ metatags.og_description }}"  >
+  <meta property="og:site_name"       content="{{ metatags.og_site_name }}" >
+  <meta property="og:type"            content="{{ metatags.og_type }}" >
 
   <!-- build:css assets/css/main.css -->
   <link rel="stylesheet" type="text/css" href="src/vendor/pure/pure.css" />
@@ -50,9 +50,12 @@
   <!-- build:js assets/js/main.js -->
   <script type="text/javascript" src="src/app/app.js"></script>
 
-  <script type="text/javascript" src="src/app/project/project.js"></script>
-  <script type="text/javascript" src="src/app/dev/dev.js"></script>
   <script type="text/javascript" src="src/app/home/home.js"></script>
+  <script type="text/javascript" src="src/app/dev/dev.js"></script>
+  <script type="text/javascript" src="src/app/projects/projects.js"></script>
+  <script type="text/javascript" src="src/app/project/project.js"></script>
+  <script type="text/javascript" src="src/app/jobs/jobs.js"></script>
+  <script type="text/javascript" src="src/app/contact/contact.js"></script>
 
   <script type="text/javascript" src="src/common/directives/version.js"></script>
   <script type="text/javascript" src="src/common/interceptors/httpInterceptor.js"></script>
