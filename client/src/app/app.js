@@ -71,6 +71,7 @@
     $rootScope.checkLocale = function(lang) {
         if($rootScope.lang !== lang) {
             $rootScope.lang = lang;
+            $rootScope.rootUrl = appConfig.apiUrl + '/' + $rootScope.lang + '/page/home';
             if($rootScope.allData[$rootScope.lang]) {
                 $rootScope.updateData();
             }
