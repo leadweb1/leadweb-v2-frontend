@@ -26,6 +26,26 @@ body {
     }
 }
 
+.ui.grid {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.white-bg {
+    background-color: $white !important;
+    color: $black !important;
+}
+
+.blue-bg {
+    background-color: $blue !important;
+    color: $white !important;
+}
+
+.dark-blue-bg {
+    background-color: $dark_blue !important;
+    color: $white !important;
+}
+
 .ui.segment {
     color: $white;
 
@@ -40,15 +60,6 @@ body {
             -webkit-border-radius: 3rem;
             border-radius: 3rem;
         }
-    }
-
-    &.white-bg {
-        background-color: $white;
-        color: $black;
-    }
-
-    &.blue-bg {
-        background-color: $blue;
     }
 
     &.footer {
