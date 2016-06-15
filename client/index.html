@@ -21,10 +21,12 @@
   <meta property="og:description"     content="{{ metatags.og_description }}"  >
   <meta property="og:site_name"       content="{{ metatags.og_site_name }}" >
   <meta property="og:type"            content="{{ metatags.og_type }}" >
+  
+  <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
   <!-- build:css assets/css/main.css -->
-  <link rel="stylesheet" type="text/css" href="src/vendor/pure/pure.css" />
-  <link rel="stylesheet" type="text/css" href="src/vendor/pure/grids-responsive.css" />
+  <link rel="stylesheet" type="text/css" href="src/vendor/semantic/dist/semantic.css" />
   <link rel="stylesheet" type="text/css" href="src/vendor/angular-socialshare/angular-socialshare.css" />
   <link rel="stylesheet" type="text/css" href="tmp/main.css" />
   <!-- endbuild -->
@@ -33,13 +35,15 @@
 <body>
   <div>
     <header ui-view="header"></header>
-    <div ui-view class="l-page island"></div>
+    <div ui-view></div>
     <footer ui-view="footer"></footer>
   </div>
     
   <script type="text/javascript" src="assets/js/settings.js"></script>
     
   <!-- build:js assets/js/vendor.js -->
+  <script type="text/javascript" src="src/vendor/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="src/vendor/semantic/dist/semantic.js"></script>
   <script type="text/javascript" src="src/vendor/angular/angular.js"></script>
   <script type="text/javascript" src="src/vendor/angular-ui-router/release/angular-ui-router.js"></script>
   <script type="text/javascript" src="src/vendor/angular-socialshare/angular-socialshare.js"></script>

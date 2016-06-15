@@ -1,16 +1,12 @@
-<div class="pure-menu pure-menu-open pure-menu-horizontal">
-  <ul>
-    <li class="left" ui-sref-active="pure-menu-selected"><a href ui-sref="root.home({lang: lang})">{{ data.pages[data.pages_by_module['root.home']].name | uppercase }}</a>
-    </li>
-    <li ui-sref-active="pure-menu-selected"><a href ui-sref="root.dev({lang: lang})">{{ data.pages[data.pages_by_module['root.dev']].name | uppercase }}</a>
-    </li>
-    <li ui-sref-active="pure-menu-selected"><a href ui-sref="root.projects({lang: lang})">{{ data.pages[data.pages_by_module['root.projects']].name | uppercase }}</a>
-    </li>
-    <li ui-sref-active="pure-menu-selected"><a href ui-sref="root.jobs({lang: lang})">{{ data.pages[data.pages_by_module['root.jobs']].name | uppercase }}</a>
-    </li>
-    <li ui-sref-active="pure-menu-selected"><a href ui-sref="root.contact({lang: lang})">{{ data.pages[data.pages_by_module['root.contact']].name | uppercase }}</a>
-    </li>
-    <li ng-repeat="locale in appConfig.locales" ng-show="locale != lang"><a href ui-sref="root.home({lang: locale})">{{ locale | uppercase }}</a>
-    </li>
-  </ul>
+<div class="ui text menu">
+    <div class="header item">
+        <a href ui-sref="root.home({lang: lang})">{{ data.pages[data.pages_by_module['root.home']].name | uppercase }}</a>
+    </div>
+    <div class="right menu">
+        <a class="item" href ui-sref="root.dev({lang: lang})">{{ data.pages[data.pages_by_module['root.dev']].name | uppercase }}</a>
+        <a class="item" href ui-sref="root.projects({lang: lang})">{{ data.pages[data.pages_by_module['root.projects']].name | uppercase }}</a>
+        <a class="item" href ui-sref="root.jobs({lang: lang})">{{ data.pages[data.pages_by_module['root.jobs']].name | uppercase }}</a>
+        <a class="item" href ui-sref="root.contact({lang: lang})">{{ data.pages[data.pages_by_module['root.contact']].name | uppercase }}</a>
+        <a class="item" href ui-sref="root.home({lang: locale})" ng-repeat="locale in appConfig.locales" ng-show="locale != lang">{{ locale | uppercase }}</a>
+    </div>
 </div>
